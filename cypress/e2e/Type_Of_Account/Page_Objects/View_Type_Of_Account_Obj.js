@@ -66,7 +66,7 @@ export class ViewTypeOfAccount {
 
     select_status(txt) {
         cy.get(this.status_locator).click()
-        //cy.wait(2000)
+        cy.wait(2000)
         cy.get('.p-dropdown-items > :nth-child(' + txt + ')',{timeout:3000}).click();
         //cy.get('.p-dropdown-items').get('BUSINESS').click()
     }

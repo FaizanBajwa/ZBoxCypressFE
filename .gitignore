@@ -1,16 +1,16 @@
 /allure-report
 /allure-results
-/cypress.config.js
 /node_modules
-/package-lock.json
-/package.json
 /todo.cy.js
 cypress/e2e/1-getting-started
 cypress/e2e/2-advanced-examples
 cypress/e2e/AGORZ
 cypress/e2e/AGORZ PROVIDER
 cypress/e2e/API AGORZ
+cypress/reports
 /downloads
 cypress/videos
 cypress/screenshots
+cypress/videos/
+cypress/downloads
 

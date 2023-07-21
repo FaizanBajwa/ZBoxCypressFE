@@ -51,8 +51,6 @@ describe("Types of account search page", () => {
     it("Verify that validation message is visible when mandatory feild is selected and search button is clicked", () => {
         typeObj.add_date_from('2023-07-01')
         typeObj.add_date_to('2023-07-07')
-        //cy.contains('Search').click()
-        //cy.should('contain','Success')
         typeObj.click_on_search_button()
         typeObj.verify_success_dialog_isvisible('Success')
     })
@@ -66,7 +64,6 @@ describe("Types of account search page", () => {
         typeObj.select_switch(1)
         cy.wait(6000)
         typeObj.verify_success_dialog_isvisible2('This record is already pending for approval', 'Success')
-        //typeObj.verify_success_dialog_isvisible('This record is already pending for approval')
     })
 
     it("Verify user should not be able to active a pending account type", () => {

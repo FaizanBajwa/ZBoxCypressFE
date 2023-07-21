@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "test": "",
+    "report": "npx allure generate allure-results --clean -o allure-report"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.39.1",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-teamcity-reporter": "^4.0.0"
+  },
+  "dependencies": {
+    "chai-json-schema": "^1.5.1",
+    "crypto-js": "^4.1.1",
+    "cypress": "^12.17.0",
+    "node-forge": "^1.3.1"
+  }
+}

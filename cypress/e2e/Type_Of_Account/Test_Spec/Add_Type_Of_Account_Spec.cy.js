@@ -32,7 +32,6 @@ describe("Add Type of Account Positive UI Testcases",()=>{
         addTypeofAccount.click_on_submit_button()
         //cy.wait(4000)
         addTypeofAccount.verify_success_dialog_isvisible('submitted for approval.','Record Already Exist')
-        
     })
 
     it("Verify that user is able to create new account type [Business]",()=>{
