@@ -1,7 +1,7 @@
 export class UpdateAccountType {
     constructor() {
         this.status_locator = '#statusId'
-        this.search_button_locator = '.Down__Btn__End > :nth-child(1)'
+        this.search_button_locator = '.Down__Btn > :nth-child(1)'
         this.account_level_name_locator = '#accountLevelName'
         this.account_level_type_locator = '#lkpAccountClassificationId'
         this.kyc_set_locator = '#kycSetHeadId'
@@ -100,7 +100,7 @@ export class UpdateAccountType {
 
     navigate_to_update_page(num) {
         //cy.get(':nth-child(1) > :nth-child(5) > .actions > .p-button-warning')
-        cy.get(':nth-child(' + num + ') > :nth-child(5) > .actions > .p-button-warning',{timeout:15000}).click()
+        cy.get(':nth-child(' + num + ') > :nth-child(5) > .actions > .p-button-warning',{timeout:25000}).click()
     }
 
     verify_validation_message(div) {

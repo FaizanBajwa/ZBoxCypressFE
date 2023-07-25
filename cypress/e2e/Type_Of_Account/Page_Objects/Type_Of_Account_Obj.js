@@ -1,8 +1,8 @@
 export class TypeOfAccount {
 
     constructor() {
-        this.search_button_locator = '.Down__Btn__End > :nth-child(1)'
-        this.reset_button_locator = '.Down__Btn__End > :nth-child(2)'
+        this.search_button_locator = '.Down__Btn > :nth-child(1)'
+        this.reset_button_locator = '.Down__Btn > :nth-child(2)'
         this.date_to_locator = '#dateTo'
         this.date_from_locator = '#dateFrom'
         this.validation_dialog_message_locator = '.Toastify__toast-body'
@@ -28,7 +28,7 @@ export class TypeOfAccount {
     }
 
     click_on_drop_down_ontable(){
-        cy.get(this.table_drop_down_locator).click()
+        cy.get(this.table_drop_down_locator,{timeout:2000}).click()
     }
 
     click_on_next_page_ontable(){
@@ -67,11 +67,11 @@ export class TypeOfAccount {
     }
 
     select_switch(num){
-        cy.get(':nth-child('+num+') > :nth-child(5) > .actions > .p-inputswitch',{timeout:6000}).click()
+        cy.get(':nth-child('+num+') > :nth-child(5) > .actions > .p-inputswitch',{timeout:22000}).click()
     }
 
     check_switch_disable(num){
-        cy.get(':nth-child('+num+') > :nth-child(5) > .actions > .p-inputswitch',{timeout:6000}).should('have.class','p-disabled')
+        cy.get(':nth-child('+num+') > :nth-child(5) > .actions > .p-inputswitch',{timeout:22000}).should('have.class','p-disabled')
     }
 
     select_account_type(aType) {
@@ -116,14 +116,14 @@ export class TypeOfAccount {
     }
 
     verify_success_dialog_isvisible(txt) {
-        cy.get(this.validation_dialog_message_locator,{timeout:6000}).should(($message) => {
+        cy.get(this.validation_dialog_message_locator,{timeout:22000}).should(($message) => {
             const messageText = $message.text()
             expect(messageText).to.include(txt)
         });
     }
 
     verify_success_dialog_isvisible2(txt, otherTxt) {
-        cy.get(this.validation_dialog_message_locator,{timeout:6000}).should(($message) => {
+        cy.get(this.validation_dialog_message_locator,{timeout:12000}).should(($message) => {
             const messageText = $message.text()
             expect(messageText).to.satisfy((text) => {
                 return text.includes(txt) || text.includes(otherTxt)

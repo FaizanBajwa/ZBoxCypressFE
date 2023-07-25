@@ -143,6 +143,10 @@ export class AddTypeOfAccount {
         cy.get(this.max_balance_locator).type(txt)
     }
 
+    check_max_balance_visibility(){
+        cy.get(this.max_balance_locator).should('be.visible')
+    }
+
 
     enter_account_name_and_verify(name) {
         cy.get(this.account_level_name_locator).type(name).should('have.value','')

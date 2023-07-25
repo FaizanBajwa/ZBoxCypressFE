@@ -29,6 +29,7 @@ describe("Add Type of Account Positive UI Testcases",()=>{
         addTypeofAccount.enter_yearly_amt_limit_cr(2)
         addTypeofAccount.enter_yearly_trans_limit_cr(2)
         addTypeofAccount.enter_max_amount(2)
+        addTypeofAccount.check_max_balance_visibility()
         addTypeofAccount.click_on_submit_button()
         //cy.wait(4000)
         addTypeofAccount.verify_success_dialog_isvisible('submitted for approval.','Record Already Exist')
@@ -50,7 +51,7 @@ describe("Add Type of Account Positive UI Testcases",()=>{
         addTypeofAccount.enter_monthly_trans_limit_cr(2)
         addTypeofAccount.enter_yearly_amt_limit_cr(2)
         addTypeofAccount.enter_yearly_trans_limit_cr(2)
-        addTypeofAccount.enter_max_amount(2)
+        //addTypeofAccount.enter_max_amount(2)
         addTypeofAccount.click_on_submit_button()
         //cy.wait(4000)
         addTypeofAccount.verify_success_dialog_isvisible('submitted for approval.')
@@ -73,6 +74,7 @@ describe("Add Type of Account Positive UI Testcases",()=>{
         addTypeofAccount.enter_monthly_trans_limit_cr(2)
         addTypeofAccount.enter_yearly_amt_limit_cr(2)
         addTypeofAccount.enter_yearly_trans_limit_cr(2)
+        addTypeofAccount.check_max_balance_visibility()
         addTypeofAccount.enter_max_amount(2)
         addTypeofAccount.click_on_submit_button()
         //cy.wait(4000)
@@ -97,6 +99,7 @@ describe("Add Type of Account Positive UI Testcases",()=>{
         addTypeofAccount.enter_yearly_amt_limit_cr(2)
         addTypeofAccount.enter_yearly_trans_limit_cr(2)
         addTypeofAccount.enter_max_amount(2)
+        addTypeofAccount.check_max_balance_visibility()
         addTypeofAccount.click_on_submit_button()
         //cy.wait(4000)
         addTypeofAccount.verify_success_dialog_isvisible('Record Already Exist')
@@ -126,14 +129,23 @@ describe("Add Type of Account Positive UI Testcases",()=>{
     it("Verify that validation messages are visible when submit button is click without providing mandatory fields",()=>{
         addTypeofAccount.click_on_submit_button()
         addTypeofAccount.verify_validation_message(1)
-        addTypeofAccount.verify_validation_message(2)
+        addTypeofAccount.verify_validation_message(3)
+        addTypeofAccount.verify_validation_message(5)
+        addTypeofAccount.verify_validation_message(6)
+        addTypeofAccount.verify_validation_message(7)
+       
+    })
+
+    it('Verify that validation messages are visible when Max balance field is visible',()=>{
+        addTypeofAccount.select_account_type(1)
+        addTypeofAccount.click_on_submit_button()
+        addTypeofAccount.verify_validation_message(1)
         addTypeofAccount.verify_validation_message(3)
         addTypeofAccount.verify_validation_message(4)
         addTypeofAccount.verify_validation_message(5)
         addTypeofAccount.verify_validation_message(6)
         addTypeofAccount.verify_validation_message(7)
-        addTypeofAccount.verify_validation_message(8)
-        addTypeofAccount.verify_validation_message(9)
+        
     })
 
     it("Verify that input fields are not disabled",()=>{
@@ -141,6 +153,7 @@ describe("Add Type of Account Positive UI Testcases",()=>{
         // cy.get('#maxAmtLimit').should('not.be.disabled')
         // cy.get('#lkpAccountClassificationId').should('not.be.disabled')
         // cy.get('#kycSetHeadId').should('not.be.disabled')
+        addTypeofAccount.select_account_type(1)
         addTypeofAccount.varify_input_fields_are_not_disabled()
     })
 

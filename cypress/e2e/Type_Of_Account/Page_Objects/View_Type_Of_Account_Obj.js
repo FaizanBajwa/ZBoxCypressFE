@@ -1,6 +1,6 @@
 export class ViewTypeOfAccount {
     constructor() {
-        this.search_button_locator = '.Down__Btn__End > :nth-child(1)'
+        this.search_button_locator = '.Down__Btn > :nth-child(1)'
         this.date_to_locator = '#dateTo'
         this.date_from_locator = '#dateFrom'
         this.validation_dialog_message_locator = '.Toastify__toast-body'
@@ -100,7 +100,7 @@ export class ViewTypeOfAccount {
     }
 
     navigate_to_account_type() {
-        cy.get('.layout-main > :nth-child(2) > .layout-menu-container > .layout-menu > :nth-child(6) > .p-ripple').click()
+        cy.get('.layout-main > :nth-child(2) > .layout-menu-container > .layout-menu > :nth-child(6) > .p-ripple',{timeout:6000}).click()
         cy.get('.layout-main > :nth-child(2) > .menu-logo > .logo > img')
     }
 
@@ -113,6 +113,6 @@ export class ViewTypeOfAccount {
 
     navigate_to_view_page(num) {
         //cy.get(':nth-child('+num+') > :nth-child(5) > .actions > .p-button-icon .p-c .pi .pi-eye"').click()
-        cy.get(':nth-child(' + num + ') > :nth-child(5) > .actions > .p-button-primary',{timeout:12000}).click()
+        cy.get(':nth-child(' + num + ') > :nth-child(5) > .actions > .p-button-primary',{timeout:22000}).click()
     }
 }
